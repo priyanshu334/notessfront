@@ -35,7 +35,9 @@ const NoteDetailPage: React.FC = () => {
     if (!window.confirm("Are you sure you want to delete this note?")) return;
     setSaving(true);
     try {
-      await axios.delete(`http://localhost:3000/api/notes/${id}`);
+      await axios.delete(
+        `https://notesbackend-wbye.onrender.com/api/notes/${id}`
+      );
       console.log("Note deleted:", id);
       navigate("/");
     } catch (error) {
@@ -49,7 +51,10 @@ const NoteDetailPage: React.FC = () => {
     if (!note) return;
     setSaving(true);
     try {
-      await axios.put(`http://localhost:3000/api/notes/${id}`, note);
+      await axios.put(
+        `https://notesbackend-wbye.onrender.com/api/notes/${id}`,
+        note
+      );
       console.log("Note updated:", note);
       navigate("/");
     } catch (error) {

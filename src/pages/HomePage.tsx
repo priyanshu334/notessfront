@@ -19,7 +19,9 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/notes");
+        const res = await axios.get(
+          "https://notesbackend-wbye.onrender.com/api/notes"
+        );
         setNotes(res.data);
         setRateLimited(false);
       } catch (error) {

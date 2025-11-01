@@ -23,7 +23,9 @@ const NoteCard: React.FC<NoteCardProps> = ({ note, setNotes }) => {
     if (!window.confirm("Are you sure you want to delete this note?")) return;
 
     try {
-      await axios.delete(`http://localhost:3000/api/notes/${id}`);
+      await axios.delete(
+        `https://notesbackend-wbye.onrender.com/api/notes/${id}`
+      );
       console.log("Note deleted:", id);
 
       // ✅ Remove note from state

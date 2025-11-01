@@ -16,7 +16,10 @@ const CreatePage = () => {
     try {
       // Simulate API call or Supabase insert here
       // await supabase.from("notes").insert([{ title, content }]);
-      await axios.post("http://localhost:3000/api/notes", { title, content });
+      await axios.post("https://notesbackend-wbye.onrender.com/api/notes", {
+        title,
+        content,
+      });
       toast.success("Note created successfully!");
       console.log("Note created:", { title, content });
       navigate("/"); // ✅ Navigate to home after creation
