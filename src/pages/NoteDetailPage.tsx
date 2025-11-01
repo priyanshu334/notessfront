@@ -20,7 +20,9 @@ const NoteDetailPage: React.FC = () => {
   useEffect(() => {
     const fetchNote = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/api/notes/${id}`);
+        const res = await axios.get(
+          `https://notesbackend-wbye.onrender.com/api/notes/${id}`
+        );
         setNote(res.data);
       } catch (err) {
         console.error("Error fetching note:", err);
